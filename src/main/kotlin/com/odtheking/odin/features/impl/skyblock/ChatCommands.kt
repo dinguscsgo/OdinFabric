@@ -33,7 +33,7 @@ object ChatCommands : Module(
     private val partyWarp by BooleanSetting("Warp", true, desc = "Executes the /party warp command.").withDependency { showSettings }
     private val coords by BooleanSetting("Coords (coords)", true, desc = "Sends your current coordinates.").withDependency { showSettings }
     private val partyAllInvite by BooleanSetting("Allinvite", true, desc = "Executes the /party settings allinvite command.").withDependency { showSettings }
-    private val odin by BooleanSetting("Odin", true, desc = "Sends the odin discord link.").withDependency { showSettings }
+    private val odin by BooleanSetting("Odin", true, desc = " Odin.").withDependency { showSettings }
     private val boop by BooleanSetting("Boop", true, desc = "Executes the /boop command.").withDependency { showSettings }
     private val kick by BooleanSetting("Kick", true, desc = "Executes the /p kick command.").withDependency { showSettings }
     private val coinFlip by BooleanSetting("Coinflip (cf)", true, desc = "Sends the result of a coinflip.").withDependency { showSettings }
@@ -125,7 +125,7 @@ object ChatCommands : Module(
 
         when (words[0]) {
             "help", "h" -> channelMessage("Commands: ${commandsMap.filterValues { it }.keys.joinToString(", ")}", name, channel)
-            "odin", "od" -> if (odin) channelMessage("Odin! https://discord.gg/2nCbC9hkxT", name, channel)
+            "odin", "od" -> if (odin) channelMessage("Odin! No link to see here", name, channel)
             "coords", "co" -> if (coords) channelMessage(getPositionString(), name, channel)
 
             "boop" if (boop) -> words.getOrNull(1)?.let { sendCommand("boop $it") }
