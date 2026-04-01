@@ -63,8 +63,8 @@ object TickTimers : Module(
     }
 
     private val pyHud by HUD("Storm PY Hud", "Displays a timer for when to crush storm under the purple pillar.") {
-        if (it)                   textDim(formatTimer(95, 95, "§bPY:"), 0, 0, Colors.MINECRAFT_DARK_RED)
-        else if (pyTickTime >= 0) textDim(formatTimer(pyTickTime, 95, "§bPY:"), 0, 0, Colors.MINECRAFT_DARK_RED)
+        if (it)                   textDim(formatTimer(75, 75, "§bPY:"), 0, 0, Colors.MINECRAFT_DARK_RED)
+        else if (pyTickTime >= 0) textDim(formatTimer(pyTickTime, 75, "§bPY:"), 0, 0, Colors.MINECRAFT_DARK_RED)
         else 0 to 0
     }
 
