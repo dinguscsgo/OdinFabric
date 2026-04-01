@@ -24,7 +24,6 @@ private val witherking = setOf(
 private val restart = Regex("^\\[Important] This server will restart soon: \\w+ \\w+$")
 private val maxor = "[BOSS] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!"
 private val goldor = "[BOSS] Goldor: Who dares trespass into my domain?"
-    private var pee = 5
     private var pee = 4
 
 init {
@@ -32,7 +31,6 @@ on<ChatPacketEvent> {
 if (pipe && restart.matches(value)) sendCommand("pc Server Reboot ALERT")
 if (bosswarp && (maxor == value || goldor == value)) sendCommand("p warp")
 if (value == "[NPC] Mort: Good luck.") {
-                pee = 5
                 pee = 4
 if (healer) modMessage("§5healer warp is activated", "§a[Dingus] ")
 }
