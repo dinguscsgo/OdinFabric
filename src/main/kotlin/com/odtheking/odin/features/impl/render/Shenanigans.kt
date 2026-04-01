@@ -35,7 +35,7 @@ object Shenanigans {
         Logos(Identifier.fromNamespaceAndPath("odin", "textures/job.png"), Vec3(54.5, 23.5, 40.0), 25f, 35f, 0f)
     )
 
-    private var enabled = false
+    private var enabled = true
 
     init {
         on<RenderEvent.Extract> {
@@ -47,13 +47,7 @@ object Shenanigans {
             }
         }
 
-        on<WorldEvent.Load> {
-            val now = Instant.now().atZone(ZoneOffset.UTC)
 
-            enabled = (now.monthValue == 4 && now.dayOfMonth == 1) || run {
-                val window = now.toEpochSecond() / 600L
-                ((window xor (window shr 3) xor (window shl 1)) and Long.MAX_VALUE) % 288L == 0L
-            }
         }
     }
 }
