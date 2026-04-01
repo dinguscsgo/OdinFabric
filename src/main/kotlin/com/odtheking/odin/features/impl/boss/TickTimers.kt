@@ -108,7 +108,7 @@ object TickTimers : Module(
                 }
                 pyHud.enabled && !pyTriggered && value.matches(stormPyRegex) -> {
                     pyTriggered = true
-                    pyTickTime = 95
+                    pyTickTime = 75
                 }
             }
         }
