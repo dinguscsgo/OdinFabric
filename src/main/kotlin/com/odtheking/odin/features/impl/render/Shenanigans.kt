@@ -22,7 +22,7 @@ object Shenanigans {
 
     private val logoList = listOf(
 
-        Logos(Identifier.fromNamespaceAndPath("odin", "textures/job.png"), Vec3(54.5, 23.5, 40.0), 25f, 35f, 0f)
+        Logos(Identifier.fromNamespaceAndPath("odin", "textures/job.gif"), Vec3(54.5, 23.5, 40.0), 25f, 35f, 0f)
     )
 
     private var enabled = true
